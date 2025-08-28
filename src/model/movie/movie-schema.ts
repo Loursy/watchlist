@@ -10,3 +10,5 @@ export const movieSchema = new mongoose.Schema<IMovieDocument>({
 }, {
   timestamps: true 
 });
+movieSchema.index({ title: 1 });
+movieSchema.index({ voteAverage: -1 });

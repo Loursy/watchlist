@@ -28,3 +28,8 @@ export const userSchema = new mongoose.Schema<IUserModel>(
   },
   { timestamps: true }
 );
+
+userSchema.index({ username: 1 }, { unique: true });
+userSchema.index({ email: 1 }, { unique: true });
+
+export const User = mongoose.model<IUserModel>('User', userSchema);
