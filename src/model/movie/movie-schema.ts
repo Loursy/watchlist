@@ -10,5 +10,6 @@ export const movieSchema = new mongoose.Schema<IMovieDocument>({
 }, {
   timestamps: true 
 });
+movieSchema.index({ tmdbId: 1 }, { unique: true });
 movieSchema.index({ title: 1 });
 movieSchema.index({ voteAverage: -1 });
